@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Timesheet Tasklist</title>
+	<link type="text/css" href="css/redmond/jquery-ui-1.8.custom.css" rel="stylesheet" />
+	<link type="text/css" href="css/timesheet.css" rel="stylesheet" />
+</head>
+<body>
+
+<div id="main-container">
+	<h2>Timesheet Tasklist</h2>
+	
+	<div id="queuecontainer" style="position:relative; top:auto; left:auto; right: auto; float: left;"></div>
+	<div id="queuecontainer2" style="position:relative; margin-left:15px; top:auto; left:auto; right: auto; float: left;"></div>
+	
+	<div id="menucontainer"></div>
+</div>
+
+<script src="js/jquery-1.4.2.min.js"></script>
+<script src="js/jquery-ui-1.8.custom.min.js"></script>
+<script src="js/jquery.ui.tzineClock.js"></script>
+<script src="js/jquery.ui.queueManager.js"></script>
+<script>
+$('#queuecontainer').queueManager({'userID':1,'label':"David's List",'connection':'#queuecontainer2 ul','debug':false});
+$('#queuecontainer2').queueManager({'userID':3,'label':"Wes' List",'connection':'#queuecontainer ul'});
+</script>
+</body>
+</html>

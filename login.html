@@ -1,0 +1,93 @@
+<html>
+<head>
+	<title>Timesheet Tasklist</title>
+	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
+	<link type="text/css" href="css/redmond/jquery-ui-1.8.custom.css" rel="stylesheet" />
+	<link type="text/css" href="css/timesheet.css" rel="stylesheet" />
+	<style>
+@font-face {
+	font-family: 'ScriptinaRegular';
+	src: url('css/type/scriptina-webfont.eot');
+	src: local('☺'), url('css/type/scriptina-webfont.woff') format('woff'), url('css/type/scriptina-webfont.ttf') format('truetype'), url('css/type/scriptina-webfont.svg#webfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+	
+	
+#logincontainer {
+	position:absolute;
+	width: 300px;
+	background: rgba(223, 223, 233, 0.6);
+	border: 2px solid gray;
+	//-webkit-transform: rotate(-12.5deg);
+    -webkit-box-shadow:0 0 10px #A6E5FD; }
+
+#logincontainer fieldset {
+	border:0;
+	padding: 10px;
+	color: gray; }
+#logincontainer fieldset legend{
+	background: gray;
+	padding: 5px;
+	text-align:right;
+	cursor:pointer;
+	color: white; }
+#logincontainer fieldset legend:hover{
+	color: #A6E5FD; }
+#logincontainer input {
+	font-size: 1.3em; }
+#title {
+	-webkit-transform: rotate(-45deg);
+	color: black;
+	width: 600px;
+	font-size: 3em;
+	font-family: ScriptinaRegular; }
+	</style>
+</head>
+<body>
+
+<div id="title">
+Timesheet Tasklist
+</div>
+
+<div id="logincontainer" class="ui-corner-all">
+<form action="processor.php?action=login" method="post">
+<fieldset>
+<legend class="ui-corner-bottom">Login</legend>
+<input type="text" name="username" id="username" placeholder="username" /><br />
+<input type="password" name="password" id="password" placeholder="password" /><br />
+<input type="hidden" name="action" value="login" />
+</fieldset>
+</form>
+</div>
+
+<script type="text/javascript">
+(function($){
+	$(window).resize(function(){
+
+		$('#logincontainer')
+			.position({
+				my:'center',
+				at:'center',
+				of: window
+			});
+
+		$('#title').css({
+			position:'absolute',
+			left: ($(window).width() - $('#title').outerWidth()),
+			top: ($(window).height() - $('#title').outerHeight())/2.8
+		});
+
+	});
+
+	// To initially run the function:
+	$(window).resize();
+	$('#logincontainer legend').click(function(){
+		$('#logincontainer form').trigger('submit');
+		//window.location.href = 'index2.html';
+	});
+})(jQuery);
+</script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+.rounded (@topleft: 5px, @topright: 5px, @bottomleft: 5px, @bottomright: 5px){
+	-moz-border-radius-topleft: @topleft;
+	-moz-border-radius-bottomright: @bottomright;
+	-moz-border-radius-topright: @topleft;
+	-moz-border-radius-bottomleft: @bottomleft;
+
+	-webkit-border-top-left-radius: @topleft;
+	-webkit-border-bottom-right-radius: @bottomright;
+	-webkit-border-top-right-radius: @topright;
+	-webkit-border-bottom-left: @bottomleft;
+	-webkit-background-clip: padding-box;
+	
+	border-top-left-radius: @topleft;
+	border-bottom-right-radius: @bottomright;
+	border-top-right-radius: @topright;
+	border-bottom-left-radius: @bottomleft;
+}
+
+/* --- BODY --- */
+body { 
+	font-family: arial;
+}
+#maincontainer {
+	position:relative;
+}
+.busy {
+	cursor: progress;
+}
+
+/* --- MISC --- */
+.ui-hidden {
+	display:none;
+}
+.ui-widget {
+	font-size: 62.5%;
+}
+.top-level {
+	position: relative;
+	z-index: 999;
+}
+	
+/* --- HELP-BOX --- */
+#help-box {
+	position:absolute;
+	width:500px;
+	height:400px;
+	padding:10px;
+	overflow:auto;
+	font-size:.8em;	
+	color:black;
+	background: rgba(223, 223, 233, 0.9);
+	border: 2px solid black;
+	z-index: 4;
+	.rounded;
+}
+#btn-close {
+	float:right;
+}
+
+/* --- COMPLETES --- */
+#completecontainer { 
+	position: absolute; 
+	bottom:5px; 
+	right:350px;
+	z-index: 4;
+}
+.completes { 
+	list-style:none;
+}
+.completes .complete-item {
+	width:300px; 
+	min-height:35px; 
+	padding:5px; 
+	margin-bottom:3px;
+	border:1px solid gray; 
+	position:relative;
+	background: white;
+}
+.completes #completeBtn {
+	width:300px; 
+	padding:5px; 
+	margin-bottom:3px;
+	border:1px solid gray; 
+	position:relative;
+	background: white;
+	text-align: center;
+	color: gray;
+	cursor: pointer;
+}
+.completes #completeBtn-hide {
+	min-height:0; 
+	text-align: center;
+	color: gray;
+	cursor: pointer;
+}
+.completes .complete-item .complete-item-name { 
+	margin-left: 20px;
+}
+.completes .complete-item .complete-item-type { 
+	font-size:.7em; }
+.completes .complete-item .complete-restore { 
+	position:absolute; 
+	left: 2px; 
+	top: 4px; 
+	width: 16px; 
+	height: 16px; }
+
+/* --- MENU --- */
+#menucontainer { 
+	position: absolute; 
+	top:5px; 
+	left:300px; }
+.menu {
+	margin:0;
+	padding:0;
+	list-style:none;
+	background: gray; }
+.menu .menu-item{
+	margin: 0 auto;
+	width:150px;
+	list-style:none;
+	position:relative;
+	text-align:center;
+	padding-bottom:5px; }
+.menu #menuBtn {
+	width:150px; 
+	padding:5px;
+	margin-bottom:3px;
+	border:1px solid gray;
+	position:relative;
+	background: white;
+	text-align: center;
+	color: gray;
+	cursor: pointer; }
+.menu-item .ui-button {
+	width:150px; }
+	
+/* --- QUEUE --- */
+#queuecontainer { 
+	position: absolute; 
+	top:5px; 
+	right:5px; }
+#queuecontainer2 { 
+	position: absolute; 
+	top:50px; 
+	left:30px; }
+.queuecontainer {
+	position:relative;
+	width:300px;
+}
+.queuecontainer h3{
+	text-align: center; }
+.queue { 
+	list-style:none;
+	font-size: 1.1em;
+	min-height: 50px;
+	width: 300px;
+	padding: 0;
+	margin: 0;
+	 }
+.queue .ui-state-highlight {
+	height:40px;
+	margin-bottom:3px; }
+.queue-item {
+	width:288px; 
+	min-height:40px; 
+	padding:5px; 
+	margin-bottom:3px;
+	margin-right: 0;
+	border:1px solid gray; 
+	position:relative;
+	background: white; }
+.queue-item-active {
+	border: 1px solid red; }
+.queue-item .queue-up { 
+	position:absolute; 
+	right: 2px; 
+	top: 2px; 
+	width: 16px; 
+	height: 16px; 
+	cursor:pointer; }
+.queue-item .queue-down { 
+	position:absolute; 
+	right: 2px; 
+	top: 22px; 
+	width: 16px; 
+	height: 16px; 
+	cursor:pointer; }
+.queue-plus { 
+	width:300px;
+	margin-bottom: 15px; }
+.queue-item-type { 
+	font-size:.7em; }
+.queue-item .editBox { 
+	font-size: 1.1em; }
+.queue-item .noPad {
+	font-size: .7em; }
+.queue-item .noPad .btnSave, .queue-item .noPad .btnDiscard {
+	color: #363636; }
+.queue-item .stopwatch {
+	position: absolute;
+	top: 2px;
+	right: 2px; }
+
+/* --- QUEUE DETAILS --- */
+.details { 
+	position:absolute;
+	background: white;
+	width:300px; 
+	height:400px; 
+	right:350px; 
+	display:none; 
+	border: 1px dashed gray;
+}
+.details .details-header { 
+	font-weight:bold; 
+	text-align:center;
+	height: 1.5em; }
+.details .queue-complete { 
+	position:absolute; 
+	right: 2px; 
+	bottom: 2px; }
+.details .details-notes { 
+	font-size: .7em; 
+	height:270px; 
+	padding:5px; }
+.details .details-notes-scroll {
+	overflow:auto; }
+.details .editBox { 
+	width:282px; 
+	height: 273px; }
+
+/* --- TIMESHEET TABLE --- */
+#timesheet-table {
+	border:1px solid gray; }
+#timesheet-table th { 
+	padding:5px;
+	border:1px solid gray; }
+#timesheet-table td { 
+	padding:5px;
+	border:1px solid gray; }
+	
+/* --- FANCY CLOCK --- */
+#fancyClock{
+    position: absolute;
+    right: 400px;
+    top: 100px;
+    height:150px;
+    width:450px;
+    background-color:#252525; }
+.clock{
+	height:150px;
+	width:150px;
+	position:relative;
+	overflow:hidden;
+	float:left; }
+.clock .rotate{
+	position:absolute;
+	width:150px;
+	height:150px;
+	top:0;
+	left:0; }
+.rotate.right{
+	display:none;
+	z-index:2; }
+.clock .bg, .clock .front{
+	width:75px;
+	height:150px;
+	background-color:#252525;
+	.rounded(5px,0,5px,0);
+	position:absolute;
+	top:0; }
+.clock .display{
+	position:absolute;
+	width:150px;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	z-index:3;
+	color:#F5F5F5;
+	font-size:45px;
+	text-align:center;
+	top:49px;
+	left:0;
+	text-shadow:4px 4px 5px #333333; }
+.clock .bg.left{ 
+	left:0; }
+.orange .bg.left{ 
+	background:url(imgs/bg_orange.png) no-repeat left top; }
+.green .bg.left{ 
+	background:url(imgs/bg_green.png) no-repeat left top; }
+.blue .bg.left{	
+	background:url(imgs/bg_blue.png) no-repeat left top; }
+.pink .bg.left{ 
+	background:url(imgs/bg_pink.png) no-repeat right top; }
+.clock .bg.right{ 
+	left:75px; }
+.orange .bg.right{ 
+	background:url(imgs/bg_orange.png) no-repeat right top; }
+.green .bg.right{ 
+	background:url(imgs/bg_green.png) no-repeat right top; }
+.blue .bg.right{ 
+	background:url(imgs/bg_blue.png) no-repeat right top; }
+.pink .bg.right{ 
+	background:url(imgs/bg_pink.png) no-repeat right top; }
+.clock .front.left{
+	left:0;
+	z-index:1; }
+	
+
+@media screen and (max-width: 1024px) {
+	#fancyClock {
+	    height:450px;
+	    width:150px;
+	}
+}
